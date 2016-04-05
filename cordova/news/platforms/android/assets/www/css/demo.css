@@ -1,0 +1,28 @@
+body {
+  cursor: url('http://ionicframework.com/img/finger.png'), auto;
+}
+a {
+	text-decoration: none;
+}
+.has-header {
+	top: 45px;
+}
+.news-list .list .item {
+  padding: 8px;
+  display: table;
+  width: 100%;
+}
+
+.news-list .list .item img {
+  width: 60px;
+  height: 60px;
+  float: left;
+  margin: 0 15px 0 5px;
+  border-radius: 3px;
+}
+
+.news-list .list .item p {
+  font-size: 1rem;
+  white-space: normal;
+  vertical-align: middle;
+}

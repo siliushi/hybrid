@@ -1,0 +1,21 @@
+<ion-view view-title="{{ title }}">
+  <ion-content class="news-list has-header">
+	<ion-refresher
+	    pulling-text="下拉刷新..."
+	    on-refresh="update()">
+	</ion-refresher>
+    <div ng-if="load"></div>
+    <div class="item" ng-if="!articleList || articleList.length===0 && !load">暂无信息</div>
+    <ul class="list" ng-if="articleList && articleList.length > 0  && !load" ng-cloak>
+      <li class="item" ng-repeat="article in articleList" ui-sref="detail({url: article.url})">
+            <img ng-src="{{ article.picUrl ? article.picUrl : '/android/www/img/img.png' }}"><p>{{ article.title }}</p>
+      </li>
+    </ul>
+    <br><br>
+    <ion-infinite-scroll
+        distance="1%"
+        on-infinite="moreArticle(pageNo+1)">
+    </ion-infinite-scroll>
+
+  </ion-content>
+</ion-view>

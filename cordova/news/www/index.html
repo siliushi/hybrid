@@ -1,0 +1,46 @@
+<html ng-app="demo">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width, minimal-ui">
+    <title>新闻</title>
+    <link rel="stylesheet" href="./css/demo.css">
+    <link rel="stylesheet" href="./plugin/ionic/css/ionic.min.css">
+  </head>
+  <body>
+    <ion-side-menus>
+
+      <ion-side-menu-content edge-drag-threshold="false" drag-content="false">
+        <ion-nav-bar class="bar-positive">
+          <!-- <ion-nav-back-button class="button-icon ion-ios7-arrow-back" ng-cloak></ion-nav-back-button> -->
+          <ion-nav-buttons side="left">
+            <!-- <a href="javascript:;" class="c-icon-sidemenu module-nav r1" menu-toggle="left"></a> -->
+            <button class="button button-icon ion-navicon" ng-click="toggleLeft()" ng-hide="$exposeAside.active"></button>
+          </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view></ion-nav-view>
+      </ion-side-menu-content>
+
+
+
+      <ion-side-menu>
+        <ion-header-bar class="bar-calm">
+          <h1 class="title">分类</h1>
+        </ion-header-bar>
+        <ion-content>
+          <div class="list">
+            <div class="item" ng-repeat="i in leftMenu" ng-click="i.click()" ng-cloak>
+              {{ i.name }}
+            </div>
+          </div>
+        </ion-content>
+      </ion-side-menu>
+    </ion-side-menus>
+    <script>
+    var NW = {
+      server: 'http://api.sina.cn/sinago/list.json?channel='
+    };
+    </script>
+    <script src="./plugin/ionic/js/ionic.bundle.min.js"></script>
+    <script src="./js/demo.js"></script>
+  </body>
+</html>
